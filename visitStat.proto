@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+package auth;
+
+message AuthUser {
+  optional string name = 1;
+  optional string browser = 2;
+  repeated string ip = 3;
+    
+  enum System {
+    LINUX = 0;
+    MACOS = 1;
+    WINDOWS = 2;
+  }
+  optional System system = 4 [default = LINUX];
+
+}
+
+message AuthCheck {
+  repeated AuthUser users = 1;
+}
