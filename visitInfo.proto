@@ -11,8 +11,9 @@ message AuthUser {
     LINUX = 0;
     MACOS = 1;
     WINDOWS = 2;
+    NULL_OS = 3;
   }
-  optional System system = 4 [default = LINUX];
+  optional System system = 4 [default = NULL_OS];
 
 }
 
