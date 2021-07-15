@@ -49,42 +49,22 @@ void fillTheVisit(auth::AuthUser* user)
     
 		user->add_ip(ipes);
 
-//		switch (PLATFORM_NAME) {
-//		case OS::WINDOWS:
-//			user->set_system(auth::AuthUser::WINDOWS);
-//			break;
-//		case OS::LINUX:
-//			user->set_system(auth::AuthUser::LINUX);
-//			break;
-//		case OS::MACOS:
-//			user->set_system(auth::AuthUser::MACOS);
-//			break;
-//		case OS::NULL_OS:
-//			user->set_system(auth::AuthUser::NULL_OS);
-//			break;
-//		default:
-//			user->set_system(auth::AuthUser::NULL_OS);
-//			break;
-//		}
-
-		cout<<"Which system? ";
-		string sys;
-		getline(cin, sys);
-		if(sys == "linux")
-		{
-			user->set_system(auth::AuthUser::LINUX);
-		}
-		else if(sys == "macos")
-		{
-			user->set_system(auth::AuthUser::MACOS);
-		}
-		else if(sys == "windows")
-		{
+		switch (PLATFORM_NAME) {
+		case OS::WINDOWS:
 			user->set_system(auth::AuthUser::WINDOWS);
-		}
-		else
-		{
-			cout<<"Unknown system. Using default." << endl;
+			break;
+		case OS::LINUX:
+			user->set_system(auth::AuthUser::LINUX);
+			break;
+		case OS::MACOS:
+			user->set_system(auth::AuthUser::MACOS);
+			break;
+		case OS::NULL_OS:
+			user->set_system(auth::AuthUser::NULL_OS);
+			break;
+		default:
+			user->set_system(auth::AuthUser::NULL_OS);
+			break;
 		}
 	}
 }
